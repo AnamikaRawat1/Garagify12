@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animated Login Form with Icons</title>
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+  }
+  .logo {
+    color: black;
+    letter-spacing: 4px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    float: left; /* Added float to align the logo to the left */
+  }
+  .logo a {
+    text-decoration: none;
+    color: black;
+  }
+  li {
+    float: right;
+    padding: 10px;
+  }
+  .login-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 400px;
+    width: 100%;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+    margin-top: 20px; /* Added margin-top to push it down */
+  }
+  .login-container:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+  }
+  .login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  .form-group {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .form-group input {
+    width: calc(100% - 20px);
+    padding: 15px 15px 15px 45px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    transition: background-color 0.3s ease;
+    animation: inputFadeIn 0.5s forwards;
+  }
+  .form-group input:focus {
+    background-color: #e0e0e0;
+    outline: none;
+  }
+  .form-group input[type="submit"] {
+    background-color: #6a5acd;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: buttonFadeIn 0.5s forwards;
+  }
+  .form-group input[type="submit"]:hover {
+    background-color: #483d8b;
+  }
+  .form-group .fa {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+  }
+  @keyframes inputFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes buttonFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+</head>
+<body>
+  <ul>
+    <li class="logo"><a href="index.html">GARAGIFY</a></li>
+  </ul>
+  <div class="login-container">
+    <h2>Booking</h2>
+    <form id="login-form" method="post" action="/booking">
+      <div class="form-group">
+        <i class="fas fa-user"></i>
+        <input type="text" name="username" placeholder="Name" required>
+      </div>
+      <div class="form-group">
+        <i class="fas fa-lock"></i>
+        <input type="email" name="password" placeholder="Email" required>
+      </div>
+      <div class="form-group">
+        <i class="fas fa-map-marker-alt"></i>
+        <input type="location" name="location" placeholder="Location" required>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="SUBMIT" id="loginformm">
+      </div>
+    </form>
+  </div>
+  <script>
+   /* 
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var username = this.username.value;
+      var password = this.password.value;
+      var location = this.location.value;
+
+      // Check if any of the fields are empty
+      if(username && password && location) {
+        // Redirect to another page
+        window.location.href = '/time'; // Replace "other_page.html" with the URL of the other page
+      } else {
+        alert("Please fill in all the details.");
+      }
+    });*/
+  </script>
+</body

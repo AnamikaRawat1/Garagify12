@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GARAGIFY</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+  }
+  h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  #deliveryMessage {
+    font-size: 24px;
+    color: #27ae60;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Arrival Time</h1>
+  <p id="deliveryMessage">Estimated time of arrival: <span id="arrivalTime">00:00:00</span></p>
+</div>
+
+<script>
+function updateArrivalTime() {
+  var seconds = 0;
+  setInterval(function() {
+    seconds++;
+    var hours = Math.floor(seconds / 3600);
+    var minutes = Math.floor((seconds % 3600) / 60);
+    var remainingSeconds = seconds % 60;
+    document.getElementById("arrivalTime").textContent = formatTime(hours) + ":" + formatTime(minutes) + ":" + formatTime(remainingSeconds);
+  }, 1000);
+}
+
+function formatTime(time) {
+  return time < 10 ? "0" + time : time;
+}
+
+updateArrivalTime(); // Start updating the arrival time immediately
+</script>
+
+</body>
+</html>
